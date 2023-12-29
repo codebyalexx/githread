@@ -14,17 +14,6 @@ type PostLayoutProps = PropsWithChildren<{
 }>;
 
 export const PostLayout = ({user, className, children, createdAt}: PostLayoutProps) => {
-    const postHeader = (
-        <div className='flex flex-row items-center gap-2'>
-            <p className='text-sm text-card-foreground mr-auto'>{user.username}</p>
-            {createdAt ? (
-                <p className={'text-sm text-muted-foreground'}>
-                    {formatDate(createdAt)}
-                </p>
-            ) : null}
-        </div>
-    );
-
     return (
         <div className={clsx('flex w-full flex-row items-start p-4', className)}>
             <Avatar>
